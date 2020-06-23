@@ -1,0 +1,39 @@
+#teacherName {
+    color: teal;
+}
+span {
+    color: red;
+}
+body {
+    font-family: Schoolbell;
+}
+p {
+    margin: 5px;
+    font-size: 20px;
+    width: 25%;
+    display: inline-block;
+}
+
+body {
+    background-image: url("background1.jpg");
+}
+h1 {
+    
+    font-size: 60px;
+    margin-top: 10px;
+}
+#title {
+    display: flex;
+    align-items: baseline;
+    margin-left: 260px;
+    margin-right: 280px;
+}
+.right {
+    display: inline-block;
+    text-align: right;
+    justify-content: right;
+}
+.left {
+    display: inline-block;
+    
+}
