@@ -8,6 +8,7 @@ className;
 document.getElementById('teacherName').innerText = teacherName;
 document.getElementById('className').innerText = className;
 
+
 var classRoll = {
     student: [],
 
@@ -24,6 +25,9 @@ var classRoll = {
     },
     togglePresent: function (position) {
         this.student[position].present = !this.student[position].present;
+        if (this.student[position].present === false){
+            this.student[position].tarde = false;
+        }
        
     },
     toggleTarde: function (position) {
@@ -101,7 +105,11 @@ var handlers = {
       },
     //position is called from the eventlistener
     deleteStudent: function(position){
-        classRoll.deleteStudent(position);
+            //confirm delete student
+            if (confirm("Do you wish to delete this student?")){
+                classRoll.deleteStudent(position); 
+            }
+        
         view.displayStudents();
     }
 
@@ -159,17 +167,19 @@ var view = {
             
             //li button to add comments
             //create image instead of button
-            var liAddEditCommentsButton = document.createElement('button');
+            //var liAddEditCommentsButton = document.createElement('button');
             //set src instead of text content
-            liAddEditCommentsButton.textContent = "Add/Edit Comments";
-            liAddEditCommentsButton.className = 'addEditComments';
+            //liAddEditCommentsButton.textContent = "Add/Edit Comments";
+            //liAddEditCommentsButton.className = 'addEditComments';
             //create a unique id for each input
             //liAddEditCommentsButton.id = "button_" + i;
             //li button to delete student
             // var liDeleteStudentButton = document.createElement('button');
             // liDeleteStudentButton.textContent = "Delete Student";
             // liDeleteStudentButton.className = 'deleteButton';
-            
+            var liAddEditCommentsImage = document.createElement('img');
+            liAddEditCommentsImage.src = 'edit.svg';
+            liAddEditCommentsImage.className = 'addEditCommentsImage';
 
             var studentPresent;
             if (student.present === true){
@@ -198,19 +208,27 @@ var view = {
             //studentLi.appendChild(liPresentButton);
             studentLi.appendChild(liStudentNameSpan);
             studentLi.appendChild(liAddEditCommentsInput);
-            studentLi.appendChild(liAddEditCommentsButton);
+            //studentLi.appendChild(liAddEditCommentsButton);
+            studentLi.appendChild(liAddEditCommentsImage);
             //adds delete button
-            studentLi.appendChild(this.createDeleteButton());
+            //studentLi.appendChild(this.createDeleteButton());
+            studentLi.appendChild(this.createDeleteButtonImage());
             //studentLi.appendChild(liDeleteStudentButton);
         }
     },
     // add delete button
-    createDeleteButton: function() {
-        var deleteButton = document.createElement('button');
-        deleteButton.textContent = "Delete Student";
-        deleteButton.className = 'deleteButton';
-        //don't know why yet
-        return deleteButton;
+    // createDeleteButton: function() {
+    //     var deleteButton = document.createElement('button');
+    //     deleteButton.textContent = "Delete Student";
+    //     deleteButton.className = 'deleteButton';
+    //     //don't know why yet
+    //     return deleteButton;
+    // },
+    createDeleteButtonImage: function(){
+        var deleteButtonImage = document.createElement('img');
+        deleteButtonImage.src = "delete3.png";
+        deleteButtonImage.className = 'deleteButtonImage';
+        return deleteButtonImage;
     },
     setUpEventListeners: function(){
         //using parent element for eventlisteners to simplify
@@ -226,21 +244,27 @@ var view = {
         var elementClicked = event.target;
 
         //checks if elementClicked is a delete button.
-        if (elementClicked.className === 'deleteButton'){
+        //if (elementClicked.className === 'deleteButton'){
             //run the function on the button click
 
             //parseInt turns the string into a number
             //number is required for handlers.fucntions
             //this is passed as the position value into handlers
+         //   handlers.deleteStudent(parseInt(elementClicked.parentNode.id));
+         //   }
+        if (elementClicked.className === 'deleteButtonImage'){
             handlers.deleteStudent(parseInt(elementClicked.parentNode.id));
-            }
+        }
         if (elementClicked.className === 'present'){
             handlers.togglePresent(parseInt(elementClicked.parentNode.id));
             }
         if (elementClicked.className === 'tarde'){
             handlers.toggleTarde(parseInt(elementClicked.parentNode.id));
             }
-        if (elementClicked.className === 'addEditComments'){
+        //if (elementClicked.className === 'addEditComments'){
+        //    handlers.addEditComments(parseInt(elementClicked.parentNode.id));
+        //}
+        if (elementClicked.className === 'addEditCommentsImage'){
             handlers.addEditComments(parseInt(elementClicked.parentNode.id));
         }
         // if (elementClicked.className === '')
@@ -250,6 +274,14 @@ var view = {
     
 //onkeypress for enter. need to add event listener    
 };
+var addStudentKeyPress = document.getElementById('addStudentInput');
+    addStudentKeyPress.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('addStudentButton').click();
+        }
+    })
+var addEditCommentsKeyPress = document.getElementById('add')
 //initialzes the eventlisteners
 view.setUpEventListeners();
 
