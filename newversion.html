@@ -3,25 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Roll Call Web App</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet'>
 </head>
 <body>
-    <div id="title">
-        <div class="left">
+    <div class="title">
+        <div id="left">
             <h1 id = "teacherName"></h1>
         </div>
-        <div class="right">
-            <h2 id = "className"></h2>
+        <div id='center'>
+            <h1>Roll Call</h1>
+        </div>
+        <div id="right">
+            <h1 id = "className"></h1>
         </div>
     </div>
-    <button onclick="handlers.toggleAllPresent()">All Present</button>
-    <input id="addStudentInput" type="text"> 
-
+    <div>
+        <div id="toolbar">
+            
+            <input id="addStudentInput" type="text"> 
+            <button id='addStudentButton' onclick="handlers.addStudent()">Add Student</button>
+        </div>
+    </div>
     
-    <button id='addStudentButton' onclick="handlers.addStudent()">Add Student</button>
-    <ol id= "studentList"></ol>
-    <script src="scriptsnew.js"></script>
+        <div id=listLabel>
+            
+            <p>P&nbsp&nbsp&nbspT</p>
+            <button onclick="handlers.toggleAllPresent()">Toggle All Present</button>
+        </div>
+        <ol id= "studentList">
+        </ol>
+        <script src="scriptsnew.js"></script>
+   
 </body>
 </html>

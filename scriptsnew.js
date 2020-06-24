@@ -1,9 +1,9 @@
-// var teacherName = prompt ("What is the teacher's name?");
-// var className = prompt ("What is the class name?");
-// teacherName;
-// className;
-var teacherName = "Mr. Burrows";
-var className = "Physical Science";
+var teacherName = prompt ("What is the teacher's name?");
+var className = prompt ("What is the class name?");
+teacherName;
+className;
+//var teacherName = "Mr. Burrows";
+//var className = "Physical Science";
 
 document.getElementById('teacherName').innerText = teacherName;
 document.getElementById('className').innerText = className;
@@ -57,7 +57,7 @@ var classRoll = {
         }
         
     }
-classRoll.addStudent('Guillermo Ernesto Hernandez');
+//classRoll.addStudent('Guillermo Ernesto Hernandez');
 
 
 var handlers = {
@@ -92,7 +92,8 @@ var handlers = {
     },
     addEditComments: function(position) {
         //var addEditCommentsPosition = document.getElementById('addEditCommentsPosition');
-        var addEditComments = document.getElementById('addEditComments');
+        //console.log('position', position); check position being called
+        var addEditComments = document.getElementsByClassName('addEditCommentsInput')[position];
         classRoll.addEditComments(position,addEditComments.value);
         //addEditCommentsPosition.value = '';
         addEditComments.value = 'add/edit comments';
@@ -143,6 +144,9 @@ var view = {
             //assigns comments for each student
             var liAddEditCommentsInput = document.createElement('input');
             liAddEditCommentsInput.type = "text";
+            liAddEditCommentsInput.className = 'addEditCommentsInput';
+            //create a unique id for each input
+            //liAddEditCommentsInput.id = "comment_" + i;
             if (student.comments === ""){
                 liAddEditCommentsInput.placeholder = "Add/Edit Comments";
             }else{
@@ -154,9 +158,13 @@ var view = {
             studentLi.id = i;
             
             //li button to add comments
+            //create image instead of button
             var liAddEditCommentsButton = document.createElement('button');
+            //set src instead of text content
             liAddEditCommentsButton.textContent = "Add/Edit Comments";
             liAddEditCommentsButton.className = 'addEditComments';
+            //create a unique id for each input
+            //liAddEditCommentsButton.id = "button_" + i;
             //li button to delete student
             // var liDeleteStudentButton = document.createElement('button');
             // liDeleteStudentButton.textContent = "Delete Student";
@@ -232,12 +240,15 @@ var view = {
         if (elementClicked.className === 'tarde'){
             handlers.toggleTarde(parseInt(elementClicked.parentNode.id));
             }
+        if (elementClicked.className === 'addEditComments'){
+            handlers.addEditComments(parseInt(elementClicked.parentNode.id));
+        }
         // if (elementClicked.className === '')
         // ); 
         }
         )},       
     
-    
+//onkeypress for enter. need to add event listener    
 };
 //initialzes the eventlisteners
 view.setUpEventListeners();

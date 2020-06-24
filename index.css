@@ -1,39 +1,109 @@
 #teacherName {
-    color: teal;
+    color: orangered;
+
 }
-span {
-    color: red;
+#studentlist {
+    display: flex;
+    justify-content: center;
+    
+
 }
-body {
-    font-family: Schoolbell;
-}
-p {
-    margin: 5px;
-    font-size: 20px;
-    width: 25%;
-    display: inline-block;
+#addStudentInput{
+    width: 15%;
 }
 
 body {
-    background-image: url("background1.jpg");
+    font-family: Schoolbell;
 }
-h1 {
+
+p {
+    margin: 5px;
+    font-size: 20px;
+    width: 30%;
+    display: inline-block;
+    color: navy;
     
-    font-size: 60px;
-    margin-top: 10px;
 }
-#title {
+ol{
+    color: orangered;
+    font-weight: 900;
+    font-size: 25px;
+    display: block;
+    justify-content: center;
+    padding-left: 0px;
+    
+    margin-top: 0px;
+}
+li{
+    width: 50%;
+    margin: auto;
+    
+    
+}
+#listLabel{
+    width: 50%;
     display: flex;
-    align-items: baseline;
-    margin-left: 260px;
-    margin-right: 280px;
+    margin: auto;
+    vertical-align: bottom;
+    padding: 0px;
+    height: 30px;
 }
-.right {
-    display: inline-block;
-    text-align: right;
-    justify-content: right;
+#listLabel>p{
+    width:5%;
 }
-.left {
-    display: inline-block;
+#listLabel>input{
+    line-height: 50px;
+}
+
+.present{
+    margin: 3px 6px 3px 6px;
+}
+.tarde{
+    margin: 3px 6px 3px 6px;
+}
+.addEditCommentsInput {
+    width: 30%;
+    border: 0px;
+    font-size: 15px;
+    color: navy
+
+}
+
+
+body {
+    background-image: url("background2light.jpg");
     
+}
+
+.title {
+    display: flex;
+    margin: auto;
+    align-content: baseline;
+}
+
+.title > div {
+    text-align: center;
+    margin: auto;
+}
+#center{
+    font-size: 40px;
+    margin: -50px;
+    color: navy;
+    width: 30%;
+    
+    opacity: 1.0;
+}
+#left{
+    font-size: 25px;
+    width: 30%;
+}
+#right{
+    font-size: 25px;
+    width: 30%;
+    color: orangered;
+}
+#toolbar {
+    display: flex;
+    justify-content: center;
+
 }
