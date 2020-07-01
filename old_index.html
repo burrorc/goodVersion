@@ -9,30 +9,28 @@
 </head>
 <body>
     <div class="title">
-        <div class="left">
+        <div id="left">
             <h1 id = "teacherName"></h1>
         </div>
-        <div class='center'>
+        <div id='center'>
             <h1>Roll Call</h1>
         </div>
-        <div class="right">
+        <div id="right">
             <h1 id = "className"></h1>
         </div>
     </div>
     <div>
         
-        <div class="toolbar">
+        <div id="toolbar">
             
             <input id="addStudentInput" type="text"> 
             <button id='addStudentButton' onclick="handlers.addStudent()">Add Student</button>
         </div>
     </div>
     
-        <div class=listLabel>
-            <div id="PT">
-                <span style="margin-left: 6px;">P</span><span style="margin-left: 20px;">T</span>
-            </div>
+        <div id=listLabel>
             
+            <p>P&nbsp&nbsp&nbspT</p>
             <button onclick="handlers.toggleAllPresent()">Toggle All Present</button>
         </div>
         <ol id= "studentList">

@@ -1,115 +1,104 @@
+body {
+    font-family: Schoolbell;
+    background-image: url("background2light.jpg");
+}
 img{
     width: 20px;
     height: 20px;
     vertical-align: middle;
 }
-#teacherName {
+.title{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    height: 180px;
+}
+.left, .right{
+    width: 30%;
+    font-size: 25px;
+    margin: auto;
     color: orangered;
+}
+.right>h1{
+    margin: auto;
 
 }
-#studentlist {
-    display: flex;
-    justify-content: center;
+.center>h1{
+    margin-bottom: 10px;
+    margin-top:-10px;
     
-
+}
+.center{
+    width: 30%;
+    font-size: 40px;
+    margin: auto;
+    color: navy;
+}
+.toolbar{
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
 #addStudentInput{
-    width: 200px;
+    width: 250px;
 }
-
-body {
-    font-family: Schoolbell;
-}
-
-p {
-    margin: 5px;
-    font-size: 20px;
-    width: 30%;
-    display: inline-block;
-    color: navy;
+.listLabel{
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    width: 820px;
+    height: 20px;
+    margin-top: 10px;
     
+}
+#PT{
+    width: 60px;
+    color: navy;
+    margin: 2px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+#studentList{
+    width: 800px;
+    margin: auto;
+    
+    margin-top: 10px;
 }
 ol{
     color: orangered;
-    font-weight: 900;
-    font-size: 25px;
     display: block;
     justify-content: center;
-    padding-left: 0px;
+   
     
-    margin-top: 0px;
 }
 li{
-    width: 50%;
-    margin: auto;
+    background-color: #eeeeee;
     
-    
+    margin-right: 0px;
+    width: 720px;
+    padding-left: 0px;
 }
-#listLabel{
-    width: 50%;
-    display: flex;
-    margin: auto;
-    vertical-align: bottom;
-    padding: 0px;
-    height: 30px;
+li>p{
+    width: 300px;
+    margin: 0px;
+    margin-left: 15px;
+    display: inline-block;
+    color: navy;
 }
-#listLabel>p{
-    width:50px;
-}
-#listLabel>button {
-    height: 20px;
-    margin-top: 7px;
-}
-
 .present{
-    margin: 3px 6px 3px 6px;
+    margin: 3px 5px 3px 6px;
 }
-.tarde{
-    margin: 3px 6px 3px 6px;
+.tarde 
+{
+    margin: 3px 6px 3px 7px;
 }
 .addEditCommentsInput {
-    width: 40%;
-    border: 0px;
+    width: 300px;
+    border: 1px solid  #aaaaaa;
+    
     font-size: 15px;
-    color: navy
-
-}
-
-
-body {
-    background-image: url("background2light.jpg");
-    
-}
-
-.title {
-    display: flex;
-    margin: auto;
-    align-content: baseline;
-}
-
-.title > div {
-    text-align: center;
-    margin: auto;
-}
-#center{
-    font-size: 40px;
-    margin: -50px;
     color: navy;
-    width: 30%;
-    
-    opacity: 1.0;
-}
-#left{
-    font-size: 25px;
-    width: 30%;
-}
-#right{
-    font-size: 25px;
-    width: 30%;
-    color: orangered;
-}
-#toolbar {
-    display: flex;
-    justify-content: center;
-
-}
+    background-color: #eeeeee;
+    }

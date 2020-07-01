@@ -1,9 +1,8 @@
 var teacherName = prompt ("What is the teacher's name?");
 var className = prompt ("What is the class name?");
-teacherName;
-className;
-//var teacherName = "Mr. Burrows";
-//var className = "Physical Science";
+
+// var teacherName = "Mr. Burrows";
+// var className = "Physical Science";
 
 document.getElementById('teacherName').innerText = teacherName;
 document.getElementById('className').innerText = className;
